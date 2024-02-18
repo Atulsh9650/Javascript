@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>the number entered from the user is:</p>
+    <p id="num"></p>
+    <p>the sum of numbers is:</p>
+    <p id="sum"></p>
+    <p>the product of numbers is:</p>
+    <p id="prod"></p>
+    <script>
+        const num = prompt("Enter a number");
+        document.getElementById("num").innerHTML = num;
+
+        const arr = [];
+        let value = 1;
+
+        for (let i = 0; i < num; i++) {
+            arr[i] = value;
+            value++;
+        }
+
+        const sum = arr.reduce((prev, curr) => {
+            return prev + curr;
+        }, 0);
+
+        document.getElementById("sum").innerHTML = sum;
+
+        const prod = arr.reduce((prev, curr) => {
+            return prev * curr;
+        }, 1);
+
+        document.getElementById("prod").innerHTML = prod;
+    </script>
+</body>
+</html>
